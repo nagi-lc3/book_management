@@ -3,11 +3,10 @@ book_management
 
 # Description
 Book online shop  
+![roster_models](https://user-images.githubusercontent.com/57529474/85920124-171ec680-b8ac-11ea-80e3-34b843923f40.png)  
 
 # Source
 現場で使えるDjangoの教科書  
-
-![roster_models](https://user-images.githubusercontent.com/57529474/85920124-171ec680-b8ac-11ea-80e3-34b843923f40.png)  
 
 # DEMO
 ![book_management_sample](https://user-images.githubusercontent.com/57529474/85939864-bd71d700-b953-11ea-845f-91f1fdff9513.png)  
