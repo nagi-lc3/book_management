@@ -32,8 +32,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # 3rd party apps
+    'django_cleanup',
 
     # My applications
+    'accounts.apps.AccountsConfig',
     'shop.apps.ShopConfig',
 ]
 
@@ -122,6 +124,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = '/var/www/{}/static'.format(PROJECT_NAME)
+
+
+##################
+# Email settings #
+##################
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 ###########
