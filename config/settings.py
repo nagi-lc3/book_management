@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 
     # 3rd party apps
     'django_cleanup',
@@ -47,6 +48,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'accounts.middlewares.SitePermissionMiddleware',
+
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -80,6 +83,13 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
+##################
+# Authentication #
+##################
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 
 #######################
@@ -124,6 +134,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = '/var/www/{}/static'.format(PROJECT_NAME)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/var/www/{}/media'.format(PROJECT_NAME)
 
 
 ##################
@@ -186,6 +199,17 @@ LOGGING = {
 ########################
 # Application settings #
 ########################
+
+# humanize.intcomma
+NUMBER_GROUPING = 3
+
+
+##########
+# Stripe #
+##########
+
+STRIPE_API_KEY = '<stripe-api-key>'
+STRIPE_PUBLISHABLE_KEY = '<stripe-publishable-key>'
 
 
 #################

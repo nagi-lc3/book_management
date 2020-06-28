@@ -63,7 +63,7 @@ class CheckoutView(LoginRequiredMixin, View):
         except stripe.error.CardError as e:
             # The card has been declined
             return render(request, 'error.html', {
-                    'message': "Your payment cannot be completed. The card has been declined.", 
+                'message': "Your payment cannot be completed. The card has been declined.",
             })
 
         logger.info("Charge[{}] created successfully.".format(charge.id))
